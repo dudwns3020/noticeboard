@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>${pageTitle }</title>
+</head>
+
+<body>
+	<h1>${pageTitle }</h1>
+
+	<header>
+		<a href="/">사이트</a>
+		<c:if test="${!rq.isLogined() }">
+			<a href="/usr/member/login"><span>로그인</span></a>
+		</c:if>
+		<c:if test="${rq.isLogined() }">
+			<a href="/usr/member/doLogout"><span>로그아웃</span></a>
+		</c:if>
+	</header>
+
+	<main>
